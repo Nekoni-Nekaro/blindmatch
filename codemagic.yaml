@@ -1,0 +1,18 @@
+workflows:
+  android-release:
+    name: BlindMatch Android APK
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      java: 17
+    scripts:
+      - name: Get packages
+        script: flutter pub get
+      - name: Build APK
+        script: flutter build apk --release --no-obfuscate
+    artifacts:
+      - build/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - your@email.com
