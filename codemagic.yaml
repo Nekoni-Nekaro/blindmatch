@@ -1,12 +1,16 @@
 workflows:
   android-release:
     name: BlindMatch Android APK
-    max_build_duration: 30
+    max_build_duration: 60
     environment:
       flutter: stable
       java: 17
     working_directory: frontend
     scripts:
+      - name: Create Flutter project structure
+        script: |
+          flutter create --project-name blindmatch --org com.blindmatch . --platforms android
+          echo "Flutter project created"
       - name: Get packages
         script: flutter pub get
       - name: Build APK
