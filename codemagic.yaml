@@ -5,14 +5,15 @@ workflows:
     environment:
       flutter: stable
       java: 17
+    working_directory: frontend
     scripts:
       - name: Get packages
         script: flutter pub get
       - name: Build APK
         script: flutter build apk --release --no-obfuscate
     artifacts:
-      - build/outputs/flutter-apk/app-release.apk
+      - frontend/build/outputs/flutter-apk/app-release.apk
     publishing:
       email:
         recipients:
-          - your@email.com
+          - smegurik@gmail.com
