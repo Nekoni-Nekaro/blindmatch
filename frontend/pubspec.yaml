@@ -1,0 +1,52 @@
+name: blindmatch
+description: "BlindMatch – personality first dating app"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_bloc: ^8.1.5
+  bloc: ^8.1.4
+  equatable: ^2.0.5
+  hydrated_bloc: ^9.1.5
+
+  # Navigation
+  go_router: ^13.2.1
+
+  # Network
+  dio: ^5.4.3
+  socket_io_client: ^2.0.3+1
+
+  # Storage
+  flutter_secure_storage: ^9.0.0
+  shared_preferences: ^2.2.3
+  path_provider: ^2.1.3
+
+  # UI
+  flutter_animate: ^4.5.0
+  cached_network_image: ^3.3.1
+  image_picker: ^1.0.7
+  flutter_svg: ^2.0.10+1
+  shimmer: ^3.0.0
+
+  # Utilities
+  intl: ^0.19.0
+  timeago: ^3.6.1
+  uuid: ^4.3.3
+  url_launcher: ^6.2.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  mocktail: ^1.0.3
+  bloc_test: ^9.1.7
+
+flutter:
+  uses-material-design: true

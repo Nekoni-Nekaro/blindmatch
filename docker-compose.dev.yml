@@ -1,0 +1,27 @@
+version: '3.9'
+
+# Development overrides: hot-reload, open ports, Adminer
+services:
+  backend:
+    build:
+      target: builder
+    command: npm run start:dev
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/.env:/app/.env
+    environment:
+      NODE_ENV: development
+    ports:
+      - '3000:3000'
+      - '9229:9229'   # Node.js debugger
+
+  postgres:
+    ports:
+      - '5432:5432'
+
+  redis:
+    ports:
+      - '6379:6379'
+
+  adminer:
+    profiles: []   # always enable in dev
